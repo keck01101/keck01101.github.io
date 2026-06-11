@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.988bb95b.css",
-    "main.js": "/static/js/main.bc16364e.js",
+    "main.js": "/static/js/main.d1f08ef5.js",
     "static/js/453.b481d64d.chunk.js": "/static/js/453.b481d64d.chunk.js",
     "static/media/PitMagic.jpg": "/static/media/PitMagic.9ff76fdd15c50452b290.jpg",
     "static/media/MastermindLab.jpg": "/static/media/MastermindLab.0a7865367b2a0ab5a7ab.jpg",
@@ -14,11 +14,11 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.988bb95b.css.map": "/static/css/main.988bb95b.css.map",
-    "main.bc16364e.js.map": "/static/js/main.bc16364e.js.map",
+    "main.d1f08ef5.js.map": "/static/js/main.d1f08ef5.js.map",
     "453.b481d64d.chunk.js.map": "/static/js/453.b481d64d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.988bb95b.css",
-    "static/js/main.bc16364e.js"
+    "static/js/main.d1f08ef5.js"
   ]
 }
