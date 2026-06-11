@@ -9,8 +9,9 @@ class FeaturedCard extends React.Component {
     render() {
         return (
             <Card className="bg-dark text-white" data-bs-theme="dark" style={{width:"25rem"}} border="warning">
-                <Card.Header>⭐ Featured Project ⭐</Card.Header>
-                {(this.props.img) ? <Card.Img variant="top" src={this.props.src} style={this.props.style}></Card.Img> 
+                <Card.Header>🏆 Featured Project 🏆</Card.Header>
+                {(this.props.img) ? <Card.Img variant="top" src={this.props.src} style={{width:"20rem", marginLeft:"auto", marginRight:"auto",
+                            paddingTop:"20px", ...this.props.imgStyle}}></Card.Img> 
                     : <p hidden>Hidden</p>} 
                 <Card.Body>
                     <Card.Title style={{fontSize:"22pt"}}>{this.props.name}</Card.Title>

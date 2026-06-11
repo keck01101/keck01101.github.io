@@ -12,32 +12,27 @@ class App extends React.Component {
       modalShow: false,
       pid: 0,
     }
-    this.desc1 = <div>
-      <p>Class project to increase the efficiency of multiplication within a custom class-specific ISA. By modifying the
-        ISA hardware description with a dedicated coprocessor, the cycles needed for multiplication was reduced by 80-90%.
-      </p>
-      <br></br>
-      <p>Skills: SystemVerilog, FPGA, ISAs, Computer Architecture</p>
+
+    this.desc1 = <div style={{textAlign:"left"}}>
+        <p>RipTide Jr is an ISA extension to the existing RipTide architecture which won the "Best Project Award"
+          in CMU's Computer Architecture and Systems class (18-742) as judged by members of Apple's CPU team.
+        </p>
     </div>
-    this.desc2 = <div>
-      <p>Project within Carnegie Mellon Rocket Command to develop an altitude targeting system (ATS) for our 2023 and 2024 
-        NASA USLI competition rockets. The developed ATS uses a microcontroller to read altitude and velocity data from sensors when
-        the rocket is in flight. Altitude and velocity measurements are used to estimate the apex height of the rocket, and if the estimate
-        exceeds the targeted altitude, fins are dynamically deployed to slow the rocket down.
+
+    this.desc2 = <div style={{textAlign:"left"}}>
+      <p>As part of the CMU Tapeout of IoT Systems course, I designed a high-speed segmented current-steering DAC. The DAC was awarded a tapeout
+        design award as part of the Apple New Silicon Initiative.
       </p>
-      <br></br>
-      <p>Skills: Feedback Control Systems, Embedded C++, I2C/SPI Communication</p>
     </div>
-    this.desc3 = <div>
-      <p>Internal CMU research project to develop a lunar rover to be used to survey lunar craters for identifying ideal locations
-        for potential human habitats. My role on the project has been to develop the control code for the mechanical movement of the onboard
-        cameras for the rover prototype.
+
+    this.desc3 = <div style={{textAlign:"left"}}>
+      <p>The MarioKar system is an alternative RC car control scheme which includes motion controls and haptic feedback.
+        The system won best ECE capstone project, and won the CMU College of Engineering
+        most engaging project award.
       </p>
-      <br></br>
-      <p>Skills: Embedded C++, PWM Motor Control, Motor Encoder Feedback</p>
     </div>
   }
-  
+
   modalHandle(newPid) {
     this.setState({pid: newPid});
     this.setState({modalShow: true});
@@ -55,14 +50,14 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Nicolas Keck</h1> 
           <h5>Electrical and computer engineering at Carnegie Mellon, space enthusiast, <br />
-          embedded/hardware engineer</h5>
+          embedded, FPGA, computer architecture</h5>
         </header>
         <div className="App-content">
-          <Modal show={this.state.modalShow} onHide={this.modalClose}>
+          <Modal size="lg" show={this.state.modalShow} onHide={this.modalClose}>
             <Modal.Header>
               <Modal.Title>{projectFind(this.state.pid)[0]}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{projectFind(this.state.pid)[1]}</Modal.Body>
+            <Modal.Body>{projectFind(this.state.pid)[6]}</Modal.Body>
             <Modal.Footer>
               <Button variant="primary" onClick={this.modalClose}>Close</Button>
             </Modal.Footer>
@@ -70,32 +65,63 @@ class App extends React.Component {
           <Badge pill bg="dark" style={{fontSize:"30px"}}>Work Experience</Badge>
           <Stack style={{paddingTop:"30px"}} gap={4}>
             <ListGroup data-bs-theme="dark" className="col-md-5 mx-auto">
+              <ListGroup.Item variant="primary">Honeybee Robotics - A Blue Origin Company</ListGroup.Item>
+              <ListGroup.Item style={{textAlign:"left"}}>
+                <Badge style={{fontSize:"18px"}}>Position Summary</Badge>
+                <br></br>
+                <ul style={{paddingTop:"5px"}}>
+                  <li>Electrical Engineering Intern</li>
+                  <li>May 2025 - August 2025</li>
+                  <li>Los Angeles, California, USA</li>
+                </ul>
+                <br></br>
+                <Badge bg="success" style={{fontSize:"18px"}}>Accomplishments</Badge>
+                <ul style={{paddingTop:"5px"}}>
+                  <li>Designed RTL diagram for FPGA-enabled lunar lander camera control card.</li>
+                  <li>Created preliminary schematic for camera control card.</li>
+                  <li>Redesigned Xilinx reference LVDS to MIPI converter circuit to function in worst-case conditions.</li>
+                  <li>Designed and evaluated a discrete Power over Coax filter for a GMSL2 serial link.</li>
+                  <li>Brought 3 component radiation test boards from concept to fabrication, and wrote bring-up and test plans for each board.</li>
+                  <li>Completed 1 additional layout and 3 additional schematics of radiation test boards before project handoff.</li>
+                </ul>
+                <br></br>
+                <Badge bg="info" style={{fontSize:"18px"}}>Skills Used</Badge>
+                <ul style={{paddingTop:"5px"}}>
+                  <li>RTL Design</li>
+                  <li>Xilinx FPGAs</li>
+                  <li>Altium Designer</li>
+                  <li>Device Radiation Effects</li>
+                  <li>SerDes</li>
+                </ul>
+              </ListGroup.Item>
+            </ListGroup>
+            <ListGroup data-bs-theme="dark" className="col-md-5 mx-auto">
               <ListGroup.Item variant="primary">Parsons Corporation (Fourth Dimension Engineering)</ListGroup.Item>
               <ListGroup.Item style={{textAlign:"left"}}>
                 <Badge style={{fontSize:"18px"}}>Position Summary</Badge>
                 <br></br>
                 <ul style={{paddingTop:"5px"}}>
-                  <li>Embedded/PCB Engineering Intern</li>
+                  <li>PCB/FPGA Engineering Intern</li>
                   <li>June 2024 - August 2024</li>
                   <li>Columbia, Maryland, USA</li>
                 </ul>
                 <br></br>
                 <Badge bg="success" style={{fontSize:"18px"}}>Accomplishments</Badge>
                 <ul style={{paddingTop:"5px"}}>
-                  <li>Helped develop a custom software defined radio device</li>
-                  <li>Wrote VHDL description for CPLD/FPGA for RF front end board control</li>
-                  <li>Wrote microcontroller communication code in C for serial debugging</li>
+                  <li>Assisted development of a custom software defined radio device.</li>
+                  <li>Designed and wrote VHDL description for an I2C-controlled FPGA to enable and disable RF chains.</li>
+                  <li>Verified VHDL description through benchtop testing of FGPA development kit.</li>
+                  <li>Wrote microcontroller communication code in C for serial debugging.</li>
                   <li>Designed and laid out a variety of supporting boards for radio device testing
-                    (power supply, MCU debug board, thermal testing boards)</li> 
-                  <li>Simulated and tested modified RC networks to optimize power supply performance</li>
-                  <li>Performed a variety of experiments to determine functionality of USB 3.0 Superspeed-only on SoC</li>
-                  <li>Worked on creating standardized internal Altium component library</li> 
+                    (power supply, MCU debug board, thermal testing boards.)</li> 
+                  <li>Simulated and tested modified RC networks to optimize power supply performance.</li>
+                  <li>Performed a variety of experiments to determine functionality of USB 3.0 Superspeed-only on SoC.</li>
                 </ul>
                 <br></br>
                 <Badge bg="info" style={{fontSize:"18px"}}>Skills Used</Badge>
                 <ul style={{paddingTop:"5px"}}>
-                  <li>VHDL and Verilog - Lattice Diamond</li>
-                  <li>C - Eclipse</li>
+                  <li>VHDL and Verilog</li>
+                  <li>C</li>
                   <li>Altium Designer</li>
                   <li>Buildroot and General Linux Kernel</li>
                   <li>Electronics Testing</li>
@@ -133,11 +159,11 @@ class App extends React.Component {
             </ListGroup>
           </Stack>
           <br></br>
-          <Badge pill bg="dark" style={{fontSize:"30px"}}>Featured Projects</Badge>
+          <Badge pill bg="dark" style={{fontSize:"30px"}}>Award-Winning Projects</Badge>
           <CardGroup style={{width:"80vw", marginLeft:"auto", marginRight:"auto", paddingTop:"30px", paddingBottom:"50px", alignContent:"center"}}>
-            <ProjCard name="Multiplication Coprocessor" desc={this.desc1} img={false} src="" pid={1} onPress={this.modalHandle.bind(this)} moreInfo={true}></ProjCard>
-            <ProjCard name="Model Rocket ATS" desc={this.desc2} img={false} src="" pid={2} onPress={this.modalHandle.bind(this)} moreInfo={true}></ProjCard>
-            <ProjCard name="PitMagic Rover" desc={this.desc3} img={false} src="" pid={0} moreInfo={true}></ProjCard>
+            <ProjCard name={projectFind(14)[0]} desc={this.desc1} img={false} src="" pid={14} onPress={this.modalHandle.bind(this)} moreInfo={true}></ProjCard>
+            <ProjCard name={projectFind(15)[0]} desc={this.desc2} img={false} src="" pid={15} onPress={this.modalHandle.bind(this)} moreInfo={true}></ProjCard>
+            <ProjCard name={projectFind(16)[0]} desc={this.desc3} img={false} src="" pid={16} onPress={this.modalHandle.bind(this)} moreInfo={true}></ProjCard>
           </CardGroup>
         </div>
       </div>

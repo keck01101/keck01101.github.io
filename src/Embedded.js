@@ -12,24 +12,7 @@ class Embedded extends React.Component {
         this.state = {
             modalShow: false,
             pid: 0,
-        }
-        this.featured1 = <div>
-            <p>Project within Carnegie Mellon Rocket Command to develop an altitude targeting system (ATS) for our 2023 and 2024 
-                NASA USLI competition rockets. The developed ATS uses a microcontroller to read altitude and velocity data from sensors when
-                the rocket is in flight. Altitude and velocity measurements are used to estimate the apex height of the rocket, and if the estimate
-                exceeds the targeted altitude, fins are dynamically deployed to slow the rocket down.
-            </p>
-            <br></br>
-            <p>Skills: Feedback Control Systems, Embedded C++, I2C/SPI Communication</p>
-        </div>
-        this.featured2 = <div>
-            <p>Internal CMU research project to develop a lunar rover to be used to survey lunar craters for identifying ideal locations
-                for potential human habitats. My role on the project has been to develop the control code for the mechanical movement of the onboard
-                cameras for the rover prototype.
-            </p>
-            <br></br>
-            <p>Skills: Embedded C++, PWM Motor Control, Motor Encoder Feedback</p>
-        </div>
+        } 
     }
 
     modalHandle(newPid) {
@@ -48,7 +31,7 @@ class Embedded extends React.Component {
                     <Modal.Header>
                         <Modal.Title>{projectFind(this.state.pid)[0]}</Modal.Title>
                     </Modal.Header>
-                        <Modal.Body>{projectFind(this.state.pid)[1]}</Modal.Body>
+                        <Modal.Body>{projectFind(this.state.pid)[5]}</Modal.Body>
                     <Modal.Footer>
                         <Button variant="primary" onClick={this.modalClose}>Close</Button>
                     </Modal.Footer>
@@ -58,16 +41,24 @@ class Embedded extends React.Component {
                 </header>
                 <div className="App-content">
                     <Stack direction="horizontal" style={{marginLeft:"auto", marginRight:"auto", 
-                        display:"flex", justifyContent:"center", paddingBottom:"50px"}} gap={5}> 
-                        <FeaturedCard name={projectFind(3)[0]} desc={this.featured2} img={projectFind(3)[2]}
-                            src={projectFind(3)[3]} pid={3} moreInfo={true} onPress={this.modalHandle.bind(this)}
-                            style={{width:"18rem", marginLeft:"auto", marginRight:"auto", paddingTop:"20px"}}></FeaturedCard>
-                        <FeaturedCard name={projectFind(2)[0]} desc={this.featured1} img={projectFind(2)[2]} 
-                            src={projectFind(2)[3]} pid={2} moreInfo={true} onPress={this.modalHandle.bind(this)}
-                            style={{width:"22rem", marginLeft:"auto", marginRight:"auto", paddingTop:"20px"}}></FeaturedCard> 
-                        <ProjCard name={projectFind(9)[0]} desc={projectFind(9)[1]} img={projectFind(9)[2]}
-                            src={projectFind(9)[3]} pid={9} moreInfo={false} style={{width:"18rem",
-                            marginLeft:"auto", marginRight:"auto", paddingTop:"20px"}}></ProjCard>
+                        display:"flex", alignItems:"flex-start", justifyContent:"center", paddingBottom:"0px", marginTop:"-50px"}} gap={5}> 
+                            <FeaturedCard name={projectFind(16)[0]} desc={projectFind(16)[1]} src={projectFind(16)[3]}
+                                img={projectFind(16)[2]} pid={16} moreInfo={true} onPress={this.modalHandle.bind(this)}></FeaturedCard>
+                            <ProjCard name={projectFind(2)[0]} desc={projectFind(2)[1]} src={projectFind(2)[3]}
+                                img={projectFind(2)[2]} pid={2} moreInfo={true} onPress={this.modalHandle.bind(this)}></ProjCard>
+                            <ProjCard name={projectFind(9)[0]} desc={projectFind(9)[1]} src={projectFind(9)[3]}
+                                img={projectFind(9)[2]} pid={9} moreInfo={true} onPress={this.modalHandle.bind(this)}></ProjCard>
+                    </Stack>
+                    <Stack direction="horizontal" style={{marginLeft:"auto", marginRight:"auto", 
+                        display:"flex", alignItems:"flex-start", justifyContent:"center", paddingBottom:"50px", marginTop:"-160px"}} gap={5}>
+                        <ProjCard name={projectFind(8)[0]} desc={projectFind(8)[1]} src={projectFind(8)[3]}
+                                img={projectFind(8)[2]} pid={8} moreInfo={false} onPress={this.modalHandle.bind(this)}
+                                style={{marginTop:"200px"}}></ProjCard>
+                        <ProjCard name={projectFind(3)[0]} desc={projectFind(3)[1]} src={projectFind(3)[3]}
+                                img={projectFind(3)[2]} pid={3} moreInfo={false} onPress={this.modalHandle.bind(this)}></ProjCard>
+                        <ProjCard name={projectFind(17)[0]} desc={projectFind(17)[1]} src={projectFind(17)[3]}
+                                img={projectFind(17)[2]} pid={17} moreInfo={false} onPress={this.modalHandle.bind(this)}
+                                style={{marginTop:"50px"}}></ProjCard>
                     </Stack>
                 </div>
             </div>

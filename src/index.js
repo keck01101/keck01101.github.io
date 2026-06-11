@@ -6,10 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Navigation from './Navigation';
-import Software from './Software';
-import Hardware from './Hardware';
 import Embedded from './Embedded';
-import Electrical from "./Electrical";
+import Digital from './Digital';
+import Other from './Other';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,10 +17,9 @@ root.render(
       <Navigation />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/software" element={<Software />} />
-        <Route path="/hardware" element={<Hardware />} />
+        <Route path="/digital" element={<Digital />} />
         <Route path="/embedded" element={<Embedded />} />
-        <Route path="/ee" element={<Electrical />} />
+        <Route path="/other" element={<Other />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

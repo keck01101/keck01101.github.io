@@ -11,23 +11,20 @@ function Navigation() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav variant="pills" defaultActiveKey="1">
-                        <Nav.Item>
+                        <Nav.Item className="mx-2">
                             <LinkContainer to="/">
                                 <Nav.Link eventKey="1">Home</Nav.Link>
                             </LinkContainer>
                         </Nav.Item>
                         <NavDropdown title="Projects" id="nav-dropdown">
-                            <LinkContainer to="/software">
-                                <NavDropdown.Item eventKey="2.1">Software</NavDropdown.Item>
-                            </LinkContainer>
-                            <LinkContainer to="/hardware">
-                                <NavDropdown.Item eventKey="2.2">Hardware</NavDropdown.Item>
+                            <LinkContainer to="/digital">
+                                <NavDropdown.Item eventKey="2.1">Digital</NavDropdown.Item>
                             </LinkContainer>
                             <LinkContainer to="/embedded">
-                                <NavDropdown.Item eventKey="2.3">Embedded</NavDropdown.Item>
+                                <NavDropdown.Item eventKey="2.2">Embedded</NavDropdown.Item>
                             </LinkContainer>
-                            <LinkContainer to="/ee">
-                                <NavDropdown.Item eventKey="2.4">Electrical</NavDropdown.Item>
+                            <LinkContainer to="/other">
+                                <NavDropdown.Item eventKey="2.3">Other</NavDropdown.Item>
                             </LinkContainer>
                         </NavDropdown>
                     </Nav>
