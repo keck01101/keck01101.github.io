@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Button } from 'react-bootstrap';
 
 function Navigation() {
     return (
@@ -28,10 +29,14 @@ function Navigation() {
                             </LinkContainer>
                         </NavDropdown>
                     </Nav>
+                    <Button className="ms-auto" variant="outline-info" href="https://www.linkedin.com/in/nicolas-keck-b79340269/"
+                        target="_blank" rel="noopener noreferrer">
+                        Linkedin
+                    </Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
     )
 }
 
-export default Navigation
+export default Navigation;
